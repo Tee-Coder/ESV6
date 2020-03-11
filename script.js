@@ -136,11 +136,83 @@ for(let myNewVar = 0; myNewVar <10; myNewVar++)
     * Rest Parameter.
     */
 
-    findHighNum = (...args) =>
-    {
-        console.log(args);
-        return args;
+    findHighNum =(minNum =0, ...args) => {
+        //...args will capture any number of arguments that we pass!
+        minNum =  Number(minNum);
+        if (minNum ==NaN) minNum =0;
+        const highNums =args.filter((element) => element >minNum);
+        //console.log(args);//It can be called by the name we had in between our parenthesis.
+        return highNums;
+    
     }
+        console.log (findHighNum(5,2,20,20,3,0,10,24,-508));
+    
 
     addAllNums = (...nums) => nums.reduce((a,v) => a+v);
     console.log(addAllNums(64,6,10,20));
+
+    /**
+     * Template Literals
+     */
+
+     const helloVar = 'Hello, World';
+     const sampleName ='Sam';
+
+     const myNewString = `Hey there, my name is ${sampleName}; I'd  like to give you a big: "${helloVar}"!!`;
+    // The syntax for template literals is:${variable Name}
+
+    //NOTE: This only works inside of backticks!But is super useful. It saves us from extra concatenation.
+
+    console.log(myNewString);
+
+    /**
+     * Spread Operator
+     * Dont get this confused with the rest parameter! Both are three dots...
+     * Remember that the rest parameter is always in PARAMETER area of a function, nowhere else. Spread is used  ANYWHERE else basically
+     */
+
+     const newArray =['Hello', ',', ' ', 'World', '!']
+     console.log(newArray);
+     console.log(...newArray); //Brought the values int he array together as one (space-separated) string. Or did it?
+
+     //spread operator separates into separate values.
+     const aBunchofNums = [5,10,36,58];
+     console.log(addAllNums(5,10,36,58)); //Spreading an argument.
+
+     /**
+      * string methods
+      */
+    /**
+     * Search() Method:
+     */
+
+     const myTestString ='Greetings, programs!';
+     console.log(myTestString.search(/TING/i));
+
+     const myReplacedString =myTestString.replace(/Programs/i,'World');
+     console.log(myReplacedString);
+
+
+     {
+         const myBlockNestedVar = 38;
+     }
+
+     //console.log(myBlockNestedVar);
+     //We CAN name blocks if we want.
+
+     myOrganizeName:{
+         //This could be named aanything...//We can organize some code in here, and control scope of let/const.
+
+         let myBlockNestedVar =55;//We used the same name as in our unamed block!
+         myBlockNestedVar++;
+         console.log(myBlockNestedVar);
+         myFinalResult = myBlockNestedVar;
+     }
+     console.log();
+
+
+     
+
+
+
+
