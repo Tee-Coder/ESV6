@@ -1,3 +1,4 @@
+
 /**
  * Let's see what some of our newer array methods are...
  */
@@ -208,10 +209,40 @@ for(let myNewVar = 0; myNewVar <10; myNewVar++)
          console.log(myBlockNestedVar);
          myFinalResult = myBlockNestedVar;
      }
-     console.log();
+     console.log(myFinalResult);
 
-
-     
+     /**
+      * Classes
+      * Check our impoert, thats how we are accessing this!
+      */
+     class Movie {
+        constructor( name, genre, year ) {
+            this.name = name;
+            this.genre = genre;
+            this.year = year;
+        }
+        showPoster() { // This is a method! We can name them as we'd like.
+            const info = `
+                MOVIE INFO
+                ==========
+                Name: ${this.name}
+                Genre: ${this.genre}
+                Year: ${this.year}
+            `;
+            return info;
+        }
+    }
+   
+                
+    
+    
+    const tron = new Movie( 'Disney\'s TRON', 'Adventure', 1982 );
+    const dragonheart = new Movie( 'Dragonheart', 'Medieval Fantasy', 1996 );
+    const godfather = new Movie( 'Godfather II', 'Action/Thriller', 1974 );
+    
+    console.log( tron );
+    console.log( dragonheart );
+    console.log( godfather );
 
 
 
