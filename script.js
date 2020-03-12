@@ -221,6 +221,15 @@ for(let myNewVar = 0; myNewVar <10; myNewVar++)
             this.genre = genre;
             this.year = year;
         }
+        getName()
+        {//How we retrieve the property. A GETTER.
+            return this.name;
+
+        }
+
+        set setName(name){//This is a method! We can name them as we'd like
+
+        }
         showPoster() { // This is a method! We can name them as we'd like.
             const info = `
                 MOVIE INFO
